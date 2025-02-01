@@ -1,0 +1,12 @@
+{
+	"name": "lekcja_7",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"dev": "tsc --watch --preserveWatchOutput"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": ""
+}
