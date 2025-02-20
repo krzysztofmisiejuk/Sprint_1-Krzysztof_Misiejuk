@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"outDir": "dist",
+		"target": "ES2019",
+		"moduleResolution": "NodeNext",
+		"module": "NodeNext",
+		"declaration": true
+	},
+	"include": ["src"]
+}
