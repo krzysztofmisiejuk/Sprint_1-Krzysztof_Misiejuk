@@ -28,18 +28,11 @@ function mapDict<T>(obj: Dict<T>, callback: (value: T) => T): Dict<T> {
 	return Object.fromEntries(newObj);
 }
 
-const mappedDict = mapDict(students, (item) => ({
-	...item,
-	age: item.age + 99,
-}));
-
 function filterDict<T>(obj: Dict<T>, callback: (value: T) => boolean): Dict<T> {
 	const arr = Object.entries(obj).filter((entries) => callback(entries[1]));
 	const newObj = Object.fromEntries(arr);
 	return newObj;
 }
-
-const resultFilter = filterDict(cars, (value) => value.price > 40000);
 
 function reducDict<T>(
 	obj: Dict<T>,
@@ -53,7 +46,14 @@ function reducDict<T>(
 	return newObj;
 }
 
-const reducedDict = reducDict(students, (acc, nextValue) => {
+const increaseAge = mapDict(students, (item) => ({
+	...item,
+	age: item.age + 99,
+}));
+
+const filterByPrice = filterDict(cars, (value) => value.price > 40000);
+
+const checkValueLength = reducDict(students, (acc, nextValue) => {
 	const value = nextValue.major;
 	return acc
 		? acc + JSON.stringify(value).length
